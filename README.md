@@ -11,15 +11,13 @@ $ mvn exec:java
 
 http://localhost:8080/api/ 以下からAPIにアクセスできます
 
-## 使っているライブラリなど
+## APIを実装する
 
-- [Grizzly](https://grizzly.java.net/)
+例えば `GET recipe/:id` を実装することを考えます
 
-HTTP 通信をいい感じにしてくれる、多分いじることはあまりない
+`src/main/java/jp/ac/titech/itpro/sdl/tsuyoso2` 以下に `RecipeResource.java` を作ります
 
-- [Jersey](https://jersey.java.net/)
-
-RESTful APIを簡単に書ける。JAX-RSという仕様があるらしい
+GETで `recipe/:id` なので次のようになります。
 
 ```java
 @Path("recipe")
@@ -34,6 +32,17 @@ public class RecipeResource {
 
 }
 ```
+
+
+## 使っているライブラリなど
+
+- [Grizzly](https://grizzly.java.net/)
+
+HTTP 通信をいい感じにしてくれる、多分いじることはあまりない
+
+- [Jersey](https://jersey.java.net/)
+
+RESTful APIを簡単に書ける。JAX-RSという仕様があるらしい
 
 とても簡単に見える
 

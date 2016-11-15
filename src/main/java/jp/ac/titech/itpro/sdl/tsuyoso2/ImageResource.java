@@ -23,7 +23,7 @@ public class ImageResource {
     @Produces("image/jpeg")
 	public Response getImage(@PathParam("id") int id) {
 		//TODO::DBから画像取得に変更
-		String dir = "~/server-app/image/";
+		String dir = "/home/tsuyoso/server-app/image/";
 		String absolutePath = dir + id + ".jpg";
 		System.out.println(absolutePath);
 		try {

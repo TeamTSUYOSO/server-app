@@ -19,14 +19,17 @@ public class ImageResource {
      * @return 画像
      */
 	@GET
+	@Path("{id}")
     @Produces("image/jpeg")
 	public Response getImage(@PathParam("id") int id) {
 		//TODO::DBから画像取得に変更
-		String dir = "~/server-app/images/";
+		String dir = "~/server-app/image/";
 		String absolutePath = dir + id + ".jpg";
+		System.out.println(absolutePath);
 		try {
             return Response.ok(new FileInputStream(absolutePath)).build();
         } catch (FileNotFoundException e) {
+        	System.out.println("notfound");
             return Response.status(Status.NOT_FOUND).build();
         }
     }
